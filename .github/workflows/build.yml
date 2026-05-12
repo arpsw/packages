@@ -17,6 +17,7 @@ jobs:
       - name: Build Satis
         run: |
           docker run --rm \
+            --user $(id -u):$(id -g) \
             -e COMPOSER_AUTH="{\"github-oauth\":{\"github.com\":\"${{ secrets.GH_PACKAGES_TOKEN }}\"}}" \
             -v $PWD:/build \
             composer/satis build /build/satis.json /build/web
