@@ -1,0 +1,64 @@
+{
+    "packages": {
+        "arpsw/guidelines-skills": [
+            {
+                "name": "arpsw/guidelines-skills",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/guidelines-skills.git",
+                    "reference": "8be7ff8dc862b6c5c53aa3a6fa7c98f725bf4274"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/guidelines-skills/zipball/8be7ff8dc862b6c5c53aa3a6fa7c98f725bf4274",
+                    "reference": "8be7ff8dc862b6c5c53aa3a6fa7c98f725bf4274",
+                    "shasum": ""
+                },
+                "require": {
+                    "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                    "php": "^8.2"
+                },
+                "time": "2026-05-12T08:49:18+00:00",
+                "default-branch": true,
+                "type": "library",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Arpsw\\Guidelines\\GuidelinesServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Arpsw\\Guidelines\\": "src"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software coding guidelines as AI skills for Laravel Boost and skills.sh",
+                "homepage": "https://github.com/arpsw/guidelines-skills",
+                "keywords": [
+                    "ai",
+                    "boost",
+                    "guidelines",
+                    "laravel",
+                    "modules",
+                    "skills"
+                ],
+                "support": {
+                    "source": "https://github.com/arpsw/guidelines-skills/tree/main",
+                    "issues": "https://github.com/arpsw/guidelines-skills/issues"
+                }
+            }
+        ]
+    }
+}

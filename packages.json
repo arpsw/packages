@@ -1,0 +1,14 @@
+{
+    "packages": [],
+    "includes": {
+        "include/all$9bf470364ebf45c9181e11d567c4183ffa12708f.json": {
+            "sha1": "9bf470364ebf45c9181e11d567c4183ffa12708f"
+        }
+    },
+    "metadata-url": "/packages/p2/%package%.json",
+    "available-packages": [
+        "arpsw/ai-module",
+        "arpsw/core-module",
+        "arpsw/guidelines-skills"
+    ]
+}

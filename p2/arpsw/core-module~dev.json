@@ -1,0 +1,127 @@
+{
+    "packages": {
+        "arpsw/core-module": [
+            {
+                "name": "arpsw/core-module",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/core-module.git",
+                    "reference": "03a3794d2e7925fb1cd16aa07d5d78c500e7c818"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/core-module/zipball/03a3794d2e7925fb1cd16aa07d5d78c500e7c818",
+                    "reference": "03a3794d2e7925fb1cd16aa07d5d78c500e7c818",
+                    "shasum": ""
+                },
+                "require": {
+                    "bezhansalleh/filament-language-switch": "^5.0",
+                    "bezhansalleh/filament-panel-switch": "^3.0",
+                    "bezhansalleh/filament-shield": "^4.0",
+                    "filafly/filament-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-media-library-plugin": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "filament/spatie-laravel-tags-plugin": "^5.0",
+                    "joshbrw/laravel-module-installer": "^2.0",
+                    "livewire/livewire": "^4.0",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "spatie/laravel-activitylog": "^5.0",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-05-12T08:50:26+00:00",
+                "default-branch": true,
+                "type": "laravel-module",
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Core\\": "app/",
+                        "Modules\\Core\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Core\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Core\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software Core Module - shared Filament infrastructure, admin panel, and user management",
+                "support": {
+                    "source": "https://github.com/arpsw/core-module/tree/v0.1.0",
+                    "issues": "https://github.com/arpsw/core-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/core-module",
+                "version": "dev-refactor/host-owned-panel-overrides",
+                "version_normalized": "dev-refactor/host-owned-panel-overrides",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/core-module.git",
+                    "reference": "bcace29871462bf40a55a61c5081186266fb80c9"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/core-module/zipball/bcace29871462bf40a55a61c5081186266fb80c9",
+                    "reference": "bcace29871462bf40a55a61c5081186266fb80c9",
+                    "shasum": ""
+                },
+                "require": {
+                    "bezhansalleh/filament-language-switch": "^5.0",
+                    "bezhansalleh/filament-panel-switch": "^3.0",
+                    "bezhansalleh/filament-shield": "^4.0",
+                    "filafly/filament-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-media-library-plugin": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "filament/spatie-laravel-tags-plugin": "^5.0",
+                    "joshbrw/laravel-module-installer": "^2.0",
+                    "livewire/livewire": "^4.0",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "spatie/laravel-activitylog": "^5.0",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-05-11T11:35:20+00:00",
+                "type": "laravel-module",
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Core\\": "app/",
+                        "Modules\\Core\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Core\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Core\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software Core Module - shared Filament infrastructure, admin panel, and user management",
+                "support": {
+                    "source": "https://github.com/arpsw/core-module/tree/refactor/host-owned-panel-overrides",
+                    "issues": "https://github.com/arpsw/core-module/issues"
+                }
+            }
+        ]
+    }
+}

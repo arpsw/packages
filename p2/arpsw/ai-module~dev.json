@@ -1,0 +1,997 @@
+{
+    "packages": {
+        "arpsw/ai-module": [
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-chore/remove-deprecated-commands",
+                "version_normalized": "dev-chore/remove-deprecated-commands",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "c57dd20789c66ea2ced62b80c435d9b1361f45ab"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/c57dd20789c66ea2ced62b80c435d9b1361f45ab",
+                    "reference": "c57dd20789c66ea2ced62b80c435d9b1361f45ab",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "dev-history as 3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-04-03T07:19:17+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\Ai\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/chore/remove-deprecated-commands",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-claude/fix-mobile-chat-modal-9JoMc",
+                "version_normalized": "dev-claude/fix-mobile-chat-modal-9JoMc",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "fe34bfcd2113b1ba47dfab6b9c463845f19f819a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/fe34bfcd2113b1ba47dfab6b9c463845f19f819a",
+                    "reference": "fe34bfcd2113b1ba47dfab6b9c463845f19f819a",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-03-11T05:40:10+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\AI\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\AI\\": "app/",
+                        "Modules\\AI\\Database\\Factories\\": "database/factories/",
+                        "Modules\\AI\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\AI\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "AgilERP",
+                        "email": "dev@agilerp.com"
+                    }
+                ],
+                "description": "AgilERP AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/claude/fix-mobile-chat-modal-9JoMc",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-claude/fix-queue-broadcast-updates-NdVhO",
+                "version_normalized": "dev-claude/fix-queue-broadcast-updates-NdVhO",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "891859175915fcedb5d8358d48254d8bdd203642"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/891859175915fcedb5d8358d48254d8bdd203642",
+                    "reference": "891859175915fcedb5d8358d48254d8bdd203642",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "dev-history as 3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-03-25T06:01:09+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\Ai\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/claude/fix-queue-broadcast-updates-NdVhO",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-claude/implement-chat-streaming-oWTFj",
+                "version_normalized": "dev-claude/implement-chat-streaming-oWTFj",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "a4a22b3f31e1b7af50cfca4500885bc68bc60e92"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/a4a22b3f31e1b7af50cfca4500885bc68bc60e92",
+                    "reference": "a4a22b3f31e1b7af50cfca4500885bc68bc60e92",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-03-24T19:10:51+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\AI\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\AI\\": "app/",
+                        "Modules\\AI\\Database\\Factories\\": "database/factories/",
+                        "Modules\\AI\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\AI\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "AgilERP",
+                        "email": "dev@agilerp.com"
+                    }
+                ],
+                "description": "AgilERP AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/claude/implement-chat-streaming-oWTFj",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-claude/investigate-prod-404-cL5Cj",
+                "version_normalized": "dev-claude/investigate-prod-404-cL5Cj",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "3d8cb84d5a104c139465b3a1af63b621766c1841"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/3d8cb84d5a104c139465b3a1af63b621766c1841",
+                    "reference": "3d8cb84d5a104c139465b3a1af63b621766c1841",
+                    "shasum": ""
+                },
+                "require": {
+                    "arpsw/core-module": "dev-main",
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "^3.3",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-medialibrary": "^11.0",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-04-26T14:54:39+00:00",
+                "type": "laravel-module",
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/claude/investigate-prod-404-cL5Cj",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-feat/workflow-interrupt-approval",
+                "version_normalized": "dev-feat/workflow-interrupt-approval",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "e5b3c1c7a35a9ee94dbca869556a1851d1042a9d"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/e5b3c1c7a35a9ee94dbca869556a1851d1042a9d",
+                    "reference": "e5b3c1c7a35a9ee94dbca869556a1851d1042a9d",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^4.0",
+                    "filament/spatie-laravel-settings-plugin": "^4.5",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-02-11T09:09:01+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\AI\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\AI\\": "app/",
+                        "Modules\\AI\\Database\\Factories\\": "database/factories/",
+                        "Modules\\AI\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\AI\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "AgilERP",
+                        "email": "dev@agilerp.com"
+                    }
+                ],
+                "description": "AgilERP AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/feat/workflow-interrupt-approval",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-feature/chat-side-panel",
+                "version_normalized": "dev-feature/chat-side-panel",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "c45e3bd784e11d8e867b91bf85d7ffb2442a2822"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/c45e3bd784e11d8e867b91bf85d7ffb2442a2822",
+                    "reference": "c45e3bd784e11d8e867b91bf85d7ffb2442a2822",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-03-10T22:06:01+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\AI\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\AI\\": "app/",
+                        "Modules\\AI\\Database\\Factories\\": "database/factories/",
+                        "Modules\\AI\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\AI\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "AgilERP",
+                        "email": "dev@agilerp.com"
+                    }
+                ],
+                "description": "AgilERP AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/feature/chat-side-panel",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/agent-fixes-augmentations",
+                "version_normalized": "dev-fix/agent-fixes-augmentations",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "2e04e5b87037ffffc357077bb86cf267c2d5aee8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/2e04e5b87037ffffc357077bb86cf267c2d5aee8",
+                    "reference": "2e04e5b87037ffffc357077bb86cf267c2d5aee8",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^4.0",
+                    "filament/spatie-laravel-settings-plugin": "^4.5",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-02-12T10:34:15+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\AI\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\AI\\": "app/",
+                        "Modules\\AI\\Database\\Factories\\": "database/factories/",
+                        "Modules\\AI\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\AI\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "AgilERP",
+                        "email": "dev@agilerp.com"
+                    }
+                ],
+                "description": "AgilERP AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/agent-fixes-augmentations",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/agent-slug-based-avatar-lookup",
+                "version_normalized": "dev-fix/agent-slug-based-avatar-lookup",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "b43e4b49119f9f807b0146fb7519473ed1226238"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/b43e4b49119f9f807b0146fb7519473ed1226238",
+                    "reference": "b43e4b49119f9f807b0146fb7519473ed1226238",
+                    "shasum": ""
+                },
+                "require": {
+                    "arpsw/core-module": "dev-main",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "^3.3",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-05-11T12:28:06+00:00",
+                "type": "laravel-module",
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/agent-slug-based-avatar-lookup",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/chat-resource",
+                "version_normalized": "dev-fix/chat-resource",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "e230380d6d595111ec52075c7faa52aabfdfccd7"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/e230380d6d595111ec52075c7faa52aabfdfccd7",
+                    "reference": "e230380d6d595111ec52075c7faa52aabfdfccd7",
+                    "shasum": ""
+                },
+                "require": {
+                    "arpsw/core-module": "*",
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "dev-history as 3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-04-13T13:29:53+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\Ai\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/chat-resource",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/neuron-exception-handler-tests",
+                "version_normalized": "dev-fix/neuron-exception-handler-tests",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "996ca902749bab672d95c5fa59bf6956a92f583e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/996ca902749bab672d95c5fa59bf6956a92f583e",
+                    "reference": "996ca902749bab672d95c5fa59bf6956a92f583e",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "dev-history as 3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-04-08T11:20:10+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\Ai\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/neuron-exception-handler-tests",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/settings-page-permission",
+                "version_normalized": "dev-fix/settings-page-permission",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "aeab765453829cebadbb249f1083928ce52f1b33"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/aeab765453829cebadbb249f1083928ce52f1b33",
+                    "reference": "aeab765453829cebadbb249f1083928ce52f1b33",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "dev-history as 3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-04-10T08:55:37+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\Ai\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/settings-page-permission",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/toolkit-user-propagation-for-authorizable-tools",
+                "version_normalized": "dev-fix/toolkit-user-propagation-for-authorizable-tools",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "3faa90a48294f9342297bbe3314469bcce16d386"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/3faa90a48294f9342297bbe3314469bcce16d386",
+                    "reference": "3faa90a48294f9342297bbe3314469bcce16d386",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^4.0",
+                    "filament/spatie-laravel-settings-plugin": "^4.5",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-02-23T20:04:02+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\AI\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\AI\\": "app/",
+                        "Modules\\AI\\Database\\Factories\\": "database/factories/",
+                        "Modules\\AI\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\AI\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "AgilERP",
+                        "email": "dev@agilerp.com"
+                    }
+                ],
+                "description": "AgilERP AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/toolkit-user-propagation-for-authorizable-tools",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-fix/widget-permissions",
+                "version_normalized": "dev-fix/widget-permissions",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "8712f1ec3e4392f27e62c2d37b43f6bff6abd36c"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/8712f1ec3e4392f27e62c2d37b43f6bff6abd36c",
+                    "reference": "8712f1ec3e4392f27e62c2d37b43f6bff6abd36c",
+                    "shasum": ""
+                },
+                "require": {
+                    "codeat3/blade-phosphor-icons": "^2.0",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "dev-history as 3.x-dev",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "require-dev": {
+                    "spatie/laravel-ray": "*"
+                },
+                "time": "2026-04-10T08:22:06+00:00",
+                "type": "laravel-module",
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "Modules\\Ai\\Providers\\AIServiceProvider"
+                        ]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/fix/widget-permissions",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            },
+            {
+                "name": "arpsw/ai-module",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:arpsw/ai-module.git",
+                    "reference": "af775cd0823d5570a3e396dc72a8e4987fd922b6"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/arpsw/ai-module/zipball/af775cd0823d5570a3e396dc72a8e4987fd922b6",
+                    "reference": "af775cd0823d5570a3e396dc72a8e4987fd922b6",
+                    "shasum": ""
+                },
+                "require": {
+                    "arpsw/core-module": "dev-main",
+                    "filament/filament": "^5.0",
+                    "filament/spatie-laravel-settings-plugin": "^5.0",
+                    "inspector-apm/inspector-laravel": "^4.18",
+                    "livewire/livewire": "^4.2",
+                    "livewire/volt": "^1.10",
+                    "neuron-core/neuron-ai": "^3.3",
+                    "nwidart/laravel-modules": "^12.0",
+                    "php": "^8.2",
+                    "predis/predis": "^3.2",
+                    "spatie/laravel-data": "^4.17",
+                    "spatie/laravel-markdown": "^2.7",
+                    "spatie/laravel-settings": "^3.6"
+                },
+                "time": "2026-05-12T08:50:44+00:00",
+                "default-branch": true,
+                "type": "laravel-module",
+                "autoload": {
+                    "psr-4": {
+                        "Modules\\Ai\\": "app/",
+                        "Modules\\Ai\\Database\\Factories\\": "database/factories/",
+                        "Modules\\Ai\\Database\\Seeders\\": "database/seeders/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Modules\\Ai\\Tests\\": "tests/"
+                    }
+                },
+                "license": [
+                    "proprietary"
+                ],
+                "authors": [
+                    {
+                        "name": "ARP.software",
+                        "email": "dev@arpsw.com"
+                    }
+                ],
+                "description": "ARP.software AI Module - AI agent system with neuron framework",
+                "support": {
+                    "source": "https://github.com/arpsw/ai-module/tree/main",
+                    "issues": "https://github.com/arpsw/ai-module/issues"
+                }
+            }
+        ]
+    }
+}
