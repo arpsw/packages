@@ -1,0 +1,10 @@
+{
+    "name": "arpsw/packages",
+    "homepage": "https://arpsw.github.io/packages",
+    "repositories": [
+        { "type": "vcs", "url": "git@github.com:arpsw/core-module.git" },
+        { "type": "vcs", "url": "git@github.com:arpsw/ai-module.git" },
+        { "type": "vcs", "url": "git@github.com:arpsw/guidelines-skills.git" }
+    ],
+    "require-all": true
+}

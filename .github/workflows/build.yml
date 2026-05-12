@@ -1,0 +1,29 @@
+name: Build Satis
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [rebuild]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Satis
+        run: |
+          docker run --rm \
+            -e COMPOSER_AUTH="{\"github-oauth\":{\"github.com\":\"${{ secrets.GH_PACKAGES_TOKEN }}\"}}" \
+            -v $PWD:/build \
+            composer/satis build /build/satis.json /build/web
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web
+          force_orphan: true
