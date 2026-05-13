@@ -3,6 +3,8 @@ name: Build Satis
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'README.md'
   repository_dispatch:
     types: [rebuild]
   workflow_dispatch:
