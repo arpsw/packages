@@ -35,13 +35,16 @@ jobs:
           tools: composer
           coverage: none
 
+      - name: Get week number for cache key
+        id: week
+        run: echo "value=$(date +%Y-W%V)" >> $GITHUB_OUTPUT
+
       - name: Cache Satis installation
         id: satis-cache
         uses: actions/cache@v4
         with:
           path: satis
-          key: satis-${{ github.run_id }}
-          restore-keys: satis-
+          key: satis-${{ steps.week.outputs.value }}
 
       - name: Install Satis
         if: steps.satis-cache.outputs.cache-hit != 'true'
