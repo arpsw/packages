@@ -33,15 +33,18 @@ jobs:
         with:
           php-version: '8.4'
           tools: composer
+          coverage: none
 
-      - name: Cache Composer dependencies
+      - name: Cache Satis installation
+        id: satis-cache
         uses: actions/cache@v4
         with:
-          path: ~/.composer/cache
-          key: satis-composer-${{ hashFiles('composer.lock') }}
-          restore-keys: satis-composer-
+          path: satis
+          key: satis-${{ github.run_id }}
+          restore-keys: satis-
 
       - name: Install Satis
+        if: steps.satis-cache.outputs.cache-hit != 'true'
         run: composer create-project --no-dev composer/satis:dev-main satis
         env:
           COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.GH_PACKAGES_TOKEN }}"}}'
