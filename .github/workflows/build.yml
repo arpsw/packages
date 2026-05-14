@@ -34,6 +34,8 @@ jobs:
           php-version: '8.4'
           tools: composer
           coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
       - name: Get week number for cache key
         id: week
@@ -49,13 +51,11 @@ jobs:
       - name: Install Satis
         if: steps.satis-cache.outputs.cache-hit != 'true'
         run: composer create-project --no-dev composer/satis:dev-main satis
-        env:
-          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.GH_PACKAGES_TOKEN }}"}}'
+
 
       - name: Build registry
         run: php satis/bin/satis build satis.json web
-        env:
-          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.GH_PACKAGES_TOKEN }}"}}'
+
 
       - name: Write job summary
         run: |
