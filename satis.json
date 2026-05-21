@@ -12,6 +12,14 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/arpsw/cms-module.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/arpsw/dam-module.git"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/arpsw/guidelines-skills.git"
     },
     {
@@ -19,5 +27,14 @@
       "url": "https://github.com/arpsw/hrm-module.git"
     }
   ],
-  "require-all": true
+  "require": {
+    "arpsw/core-module": "dev-main || @stable",
+    "arpsw/ai-module": "dev-main || @stable",
+    "arpsw/cms-module": "dev-main || @stable",
+    "arpsw/dam-module": "dev-main || @stable",
+    "arpsw/guidelines-skills": "dev-main || @stable",
+    "arpsw/hrm-module": "dev-main || @stable"
+  },
+  "require-dependencies": false,
+  "require-dev-dependencies": false
 }
