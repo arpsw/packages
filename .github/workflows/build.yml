@@ -58,6 +58,25 @@ jobs:
       - name: Build registry
         run: php satis/bin/satis build satis.json web
 
+      # Satis has no native way to filter which branches it publishes —
+      # `require` filters by package name, not version (see
+      # composer/satis#383, #393). Strip every dev-* version except
+      # dev-main from the generated metadata so ephemeral feature
+      # branches (claude/*, fix/*, chore/*, etc.) stop appearing as
+      # selectable package versions.
+      - name: Strip non-main dev branches from output
+        run: |
+          set -euo pipefail
+          for f in web/p2/arpsw/*.json; do
+            jq '.packages |= with_entries(
+                  .value |= map(
+                    select(
+                      .version == "dev-main"
+                      or (.version | startswith("dev-") | not)
+                    )
+                  )
+                )' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+          done
 
       - name: Write job summary
         run: |
