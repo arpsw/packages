@@ -25,6 +25,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/arpsw/hrm-module.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/arpsw/beacon-protocol.git"
     }
   ],
   "require": {
@@ -33,7 +37,8 @@
     "arpsw/cms-module": "dev-main || @stable",
     "arpsw/dam-module": "dev-main || @stable",
     "arpsw/guidelines-skills": "dev-main || @stable",
-    "arpsw/hrm-module": "dev-main || @stable"
+    "arpsw/hrm-module": "dev-main || @stable",
+    "arpsw/beacon-protocol": "dev-main || @stable"
   },
   "require-dependencies": false,
   "require-dev-dependencies": false
