@@ -8,6 +8,8 @@ Contains:
 - `arpsw/ai-module` — AI agent system built on the neuron framework
 - `arpsw/hrm-module` — Human Resource Management: employees, contracts, documents, competencies
 - `arpsw/guidelines-skills` — Coding guidelines as AI skills for Laravel Boost
+- `arpsw/beacon-protocol`: Ed25519 message signing and the report schema for the Beacon module
+- `arpsw/beacon-module`: Reports the installed ARP module versions, with a super admin panel for its settings and contact log
 
 To use this, add to your `composer.json`:
 
