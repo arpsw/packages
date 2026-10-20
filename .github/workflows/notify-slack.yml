@@ -10,6 +10,8 @@ name: Notify Slack
 #   announced with the next tag-triggered build. They re-save the same list
 #   so GitHub does not delete the cache after 7 days without tags.
 # - The first run records the current versions without posting anything.
+# - Each version lists the commit titles since the previous tag, read with
+#   GH_PACKAGES_TOKEN (the module repos are private).
 # - Needs the SLACK_RELEASES_WEBHOOK secret (a Slack incoming webhook URL).
 #   Without it nothing is posted and the list stays unchanged.
 
@@ -84,6 +86,7 @@ jobs:
         if: steps.diff.outputs.notify == 'true'
         env:
           SLACK_RELEASES_WEBHOOK: ${{ secrets.SLACK_RELEASES_WEBHOOK }}
+          GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
         run: |
           set -euo pipefail
 
@@ -92,13 +95,56 @@ jobs:
             exit 0
           fi
 
-          lines=""
+          : > releases.jsonl
           while read -r name version; do
-            lines+="• <https://github.com/${name}/tree/${version}|${name} ${version}>"$'\n'
+            previous=$(awk -v n="$name" '$1 == n { print $2 }' current.txt | sort -V | grep -x -B1 -F "$version" | head -1)
+            [ "$previous" = "$version" ] && previous=""
+
+            IFS=. read -r major minor _ <<< "${version#v}"
+            IFS=. read -r previous_major previous_minor _ <<< "${previous#v}"
+            if [ -z "$previous" ]; then kind="first release"
+            elif [ "$major" != "$previous_major" ]; then kind="major"
+            elif [ "$minor" != "$previous_minor" ]; then kind="minor"
+            else kind="patch"
+            fi
+
+            commits='[]'
+            if [ -n "$previous" ]; then
+              commits=$(curl --fail --silent --show-error \
+                -H "Authorization: Bearer ${GH_TOKEN}" -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/${name}/compare/${previous}...${version}" \
+                | jq -c '[.commits[] | select((.parents | length) == 1) | .commit.message | split("\n")[0]] | reverse') \
+                || commits='[]'
+            fi
+
+            jq -cn --arg name "$name" --arg version "$version" --arg previous "$previous" \
+              --arg kind "$kind" --argjson commits "$commits" \
+              '{name: $name, version: $version, previous: $previous, kind: $kind, commits: $commits}' >> releases.jsonl
           done < new.txt
 
-          payload=$(jq -n --arg lines "$lines" \
-            '{text: ("New releases in the ARP package registry:\n" + $lines)}')
+          payload=$(jq -s -f /dev/stdin releases.jsonl <<'JQ'
+          def esc: gsub("&"; "&amp;") | gsub("<"; "&lt;") | gsub(">"; "&gt;");
+          def repo: "https://github.com/" + .name;
+          def kind_text:
+            if .kind == "major" then "⚠️ *major, may break*"
+            elif .kind == "first release" then "first release"
+            else .kind end;
+          {
+            text: ("New releases in the ARP package registry: " + (map(.name + " " + .version) | join(", "))),
+            blocks: (
+              [{type: "header", text: {type: "plain_text", text: "📦 New releases in the ARP package registry"}}]
+              + map({type: "section", text: {type: "mrkdwn", text: (
+                  "*<" + repo + "/tree/" + .version + "|" + .name + " " + .version + ">*   " + kind_text
+                  + (if .previous != "" then " · was " + .previous else "" end)
+                  + (.commits[:10] | map("\n• " + esc) | join(""))
+                  + (if (.commits | length) > 10 then "\n• _and " + ((.commits | length) - 10 | tostring) + " more_" else "" end)
+                  + (if .previous != "" then "\n<" + repo + "/compare/" + .previous + "..." + .version + "|What changed>" else "" end)
+                )}})
+              + [{type: "context", elements: [{type: "mrkdwn", text: ("Update a host with `composer update " + (map(.name) | unique | join(" ")) + "`")}]}]
+            )
+          }
+          JQ
+          )
 
           curl --fail --silent --show-error -X POST -H 'Content-Type: application/json' \
             --data "$payload" "$SLACK_RELEASES_WEBHOOK"
