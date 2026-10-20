@@ -1,0 +1,114 @@
+name: Notify Slack
+
+# Posts newly tagged package versions to Slack after "Build Satis" publishes
+# the registry. It only reads the finished build's output; build.yml is not
+# involved, and a failure here never affects the registry.
+#
+# - Only tagged versions count; dev-main and other branches never notify.
+# - Builds started by the nightly schedule never notify and leave the list
+#   of announced versions unchanged, so a tag such a build picked up is
+#   announced with the next tag-triggered build. They re-save the same list
+#   so GitHub does not delete the cache after 7 days without tags.
+# - The first run records the current versions without posting anything.
+# - Needs the SLACK_RELEASES_WEBHOOK secret (a Slack incoming webhook URL).
+#   Without it nothing is posted and the list stays unchanged.
+
+on:
+  workflow_run:
+    workflows: [Build Satis]
+    types: [completed]
+
+concurrency:
+  group: notify-slack
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+
+    env:
+      SCHEDULED: ${{ github.event.workflow_run.event == 'schedule' }}
+
+    steps:
+      - name: Restore the announced versions
+        id: restore
+        uses: actions/cache/restore@v4
+        with:
+          path: state
+          key: announced-versions-${{ github.event.workflow_run.id }}
+          restore-keys: announced-versions-
+
+      - name: Download the published registry
+        if: env.SCHEDULED != 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+          path: artifact
+
+      - name: Find new tagged versions
+        id: diff
+        if: env.SCHEDULED != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p web state
+          tar -xf artifact/artifact.tar -C web ./p2
+
+          for f in web/p2/arpsw/*.json; do
+            case "$f" in *~dev.json) continue ;; esac
+            jq -r '.packages | to_entries[] | .key as $name | .value[] | "\($name) \(.version)"' "$f"
+          done | sort -u > current.txt
+
+          if [ ! -f state/versions.txt ]; then
+            echo "No list of announced versions yet: recording $(wc -l < current.txt) versions without posting."
+            cp current.txt state/versions.txt
+            echo "save=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          comm -13 state/versions.txt current.txt > new.txt
+          echo "New tagged versions: $(wc -l < new.txt)"
+          cat new.txt
+
+          if [ -s new.txt ]; then
+            echo "notify=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post to Slack
+        id: post
+        if: steps.diff.outputs.notify == 'true'
+        env:
+          SLACK_RELEASES_WEBHOOK: ${{ secrets.SLACK_RELEASES_WEBHOOK }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SLACK_RELEASES_WEBHOOK}" ]; then
+            echo "::warning::SLACK_RELEASES_WEBHOOK is not set; nothing posted, the list stays unchanged."
+            exit 0
+          fi
+
+          lines=""
+          while read -r name version; do
+            lines+="• <https://github.com/${name}/tree/${version}|${name} ${version}>"$'\n'
+          done < new.txt
+
+          payload=$(jq -n --arg lines "$lines" \
+            '{text: ("New in the ARP package registry:\n" + $lines)}')
+
+          curl --fail --silent --show-error -X POST -H 'Content-Type: application/json' \
+            --data "$payload" "$SLACK_RELEASES_WEBHOOK"
+
+          cp current.txt state/versions.txt
+          echo "save=true" >> "$GITHUB_OUTPUT"
+
+      - name: Save the announced versions
+        if: steps.diff.outputs.save == 'true' || steps.post.outputs.save == 'true' || (env.SCHEDULED == 'true' && steps.restore.outputs.cache-matched-key != '')
+        uses: actions/cache/save@v4
+        with:
+          path: state
+          key: announced-versions-${{ github.event.workflow_run.id }}
