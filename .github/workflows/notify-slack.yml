@@ -98,7 +98,7 @@ jobs:
           done < new.txt
 
           payload=$(jq -n --arg lines "$lines" \
-            '{text: ("New in the ARP package registry:\n" + $lines)}')
+            '{text: ("New releases in the ARP package registry:\n" + $lines)}')
 
           curl --fail --silent --show-error -X POST -H 'Content-Type: application/json' \
             --data "$payload" "$SLACK_RELEASES_WEBHOOK"
