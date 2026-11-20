@@ -46,5 +46,8 @@
     "arpsw/beacon-module": "dev-main || @stable"
   },
   "require-dependencies": false,
-  "require-dev-dependencies": false
+  "require-dev-dependencies": false,
+  "abandoned": {
+    "arpsw/beacon-module": "arpsw/core-module"
+  }
 }
